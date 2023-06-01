@@ -1,0 +1,42 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgray;
+  height: 100vh;
+}
+
+.login-form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 300px;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: auto;
+  
+  grid-gap: 16px;
+}
+
+.login-form-inner {
+  text-align: center;
+}
+
+.login-form .ant-form-item {
+  display: flex;
+}
+
+.login-form .ant-form-item-label {
+  width: 100px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.login-form .ant-form-item-control {
+  flex: 1;
+  display: flex;
+}
+
+.login-form .ant-form-item-control-input {
+  width: 300px;
+}
