@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "SmileySans";
+  src: url('../../public/SmileySans-Oblique.ttf');
+}
+
+.layout {
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  height: 100vh;
+  padding-left: 300px;
+  padding-right: 300px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.left-layout {
+  flex: 7; 
+  background-color: #f0f0f0;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-layout{
+	flex: 3; /* 占比30% */
+  background-color: #eaeaea;
+}
+
+.message-box{
+  background-color: #eaeaea;
+  padding: 10px; 
+}
+.container {
+  display: flex;
+}
+
+.container > * {
+  flex: 1;
+}
+
+.container > :first-child {
+  flex-basis: 70%; /* 左边占 70% 的宽度 */
+}
+
+.container > :last-child {
+  flex-basis: 30%; /* 右边占 30% 的宽度 */
+}
+
+.fade-in {
+  font-size: 150%;
+  font-family: 'SmileySans';
+  letter-spacing: 1px;
+  color:black;
+  padding-top: 10px;
+  opacity: 0;
+  
+  
+}
+
+.fade-in.active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.card-inner {
+  padding: 5px;
+  grid-template-columns: auto;
+  position: relative;
+  height: 50px;
+  margin : 10px;
+  font-size: 150%;
+  font-family: 'SmileySans';
+}
+
+.vertical-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border: 2px solid black;
+  margin: 30px
+}
+
+.button {
+  padding: 5px;
+  grid-template-columns: auto;
+  position: relative;
+  height: 50px;
+  width: 100px;
+  margin : 10px;
+  font-size: 150%;
+  font-family: 'SmileySans';
+}
+.button-opration {
+  display: flex;
+  font-family: 'SmileySans';
+}
+.operation {
+  padding-top: 25px;
+}
+.default-font {
+  font-family: 'SmileySans';
+}
+.SkillTreeStyle {
+  background-color: #dd5a5a;
+
+  width: '200px';
+  height: '200px';
+}
+.right-up-layout{
+  height: 30vh;
+}
+.skill-Style{
+  background-color: #dd5a5a;
+}

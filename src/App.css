@@ -52,3 +52,11 @@
 .input-area button:hover {
   background-color: #45a049;
 }
+
+.qwq{
+  color:aqua
+}
+
+.qwq .child {
+  color: blue
+}
