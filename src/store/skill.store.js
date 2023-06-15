@@ -6,7 +6,9 @@ class SkillStore {
   
   skill_list = []
   learned_skills = []
-  now_page = 0
+  now_page = 1
+
+  flow = null
   constructor() {
 		makeAutoObservable(this,{
 			getSkillList : computed

@@ -5,7 +5,7 @@ import { getTokenFromLocalStorage } from './token'
 
 const http = axios.create({
     baseURL : 'http://62.234.54.216:8000',
-    timeout : 5000
+    timeout : 50000
 })
 //请求拦截
 http.interceptors.request.use((config) => {

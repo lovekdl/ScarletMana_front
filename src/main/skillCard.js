@@ -10,9 +10,10 @@ import './main.css'
 function SkillCard(props) {
   const [isSelected, setIsSelected] = useState(false);
   const {SkillStore} = useStore()
-
+  
   const handleMouseEnter = () => {
     setIsSelected(true);
+    
   };
 
   const handleMouseLeave = () => {
@@ -61,6 +62,8 @@ function SkillCard(props) {
         </div>
       }
     </div>
+    
+    
   }
   return <div>{content}</div>
 }
