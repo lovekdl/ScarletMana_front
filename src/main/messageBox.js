@@ -21,7 +21,7 @@ function MessageBox() {
 						{item.content}
 						<br></br>
 				</div>))}
-			<button onClick={onClickHandler}> {count}</button>
+			{/* <button onClick={onClickHandler}> {count}</button> */}
 		</div>
 	)
 }

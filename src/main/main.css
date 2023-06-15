@@ -1,33 +1,36 @@
 @font-face {
   font-family: "SmileySans";
-  src: url('../../public/SmileySans-Oblique.ttf');
+  src: url('../../public/SourceHanSerif-Medium.ttc');
 }
 
 .layout {
   display: flex;
   justify-content: center; /* 水平居中 */
   height: 100vh;
-  padding-left: 300px;
-  padding-right: 300px;
+  padding-left: 100px;
+  padding-right: 150px;
   box-sizing: border-box;
   overflow: hidden;
 }
 
-.left-layout {
+.right-layout {
   flex: 7; 
-  background-color: #f0f0f0;
+  background-color:#ffffff;
   justify-content: center;
   align-items: center;
 }
 
-.right-layout{
+.left-layout{
 	flex: 3; /* 占比30% */
-  background-color: #eaeaea;
+  height :100vh;
+  background-color: #ffffff;
 }
 
 .message-box{
-  background-color: #eaeaea;
+  background-color: #ffffff;
   padding: 10px; 
+  height: 80vh;
+  overflow: hidden;
 }
 .container {
   display: flex;
@@ -75,6 +78,7 @@
   display: flex;
   flex-direction: column;
   width: 300px;
+  height: 100%;
   border: 2px solid black;
   margin: 30px
 }
@@ -97,17 +101,91 @@
   padding-top: 25px;
 }
 .default-font {
+  font-size: 150%;
   font-family: 'SmileySans';
 }
-.SkillTreeStyle {
-  background-color: #dd5a5a;
+.selected-span {
+  cursor: pointer;
+}
+.my-button {
+  margin : 10px;
+  font-size: 100%;
+  font-family: 'SmileySans';
+  border: 2px solid black;
+  padding: 5px;
+  display: inline-block;
+}
 
-  width: '200px';
-  height: '200px';
+.my-button2 {
+  font-size: 100%;
+  font-family: 'SmileySans';
+  border: 2px solid black;
+  padding: 2px;
+  display: inline-block;
 }
-.right-up-layout{
-  height: 30vh;
+
+.multiline-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-.skill-Style{
-  background-color: #dd5a5a;
+.default-font .ant-table-cell {
+  font-size: 150%;
+  font-family: 'SmileySans';
+}
+
+.default-h-font {
+  font-weight: bold;
+  font-size: 130%;
+  font-family: 'SmileySans';
+}
+.mini-font {
+  font-size: 100%;
+  font-family: 'SmileySans';
+}
+
+.my-component {
+  border: 2px solid black;
+  width: 200px;
+}
+
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  flex: 1;
+}
+.my-textarea{
+  border: 2px solid black;
+  width: 20vw;
+  height: 95%;
+  font-size: 130%;
+  font-family: 'SmileySans';
+  resize: none;
+}
+.top-component {
+  flex: 1;
+}
+
+.bottom-component {
+  flex: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.bottom-component-right {
+  border: 2px solid black;
+  width: 3vw;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 98%;
+  font-size: 130%;
+  font-family: 'SmileySans';
+  resize: none;
+  align-items: center;
+  flex: 1;
+  
 }

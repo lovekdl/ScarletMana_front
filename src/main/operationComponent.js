@@ -9,8 +9,7 @@ import RankModal from '../rank/rank.modal';
 const OperationComponent = () => {
   const {ResourceStore, MessageStore} = useStore();
   const [rankVisible, setRankVisible] = useState(false);
-  const inputWidth1 = {
-    
+  const inputWidth1 = {    
     width: `${ (''+ResourceStore.miner).length * 8 + 60}px`, // 根据文本长度计算宽度，每个字符占用 8px 的宽度
   };
   const inputWidth2 = {
@@ -135,30 +134,146 @@ const OperationComponent = () => {
     }
   }
 
+  var ok = 1
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsSelected(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsSelected(false);
+  };
+  const spanClassName = `${'default-font'} ${isSelected ? 'selected-span' : ''}`;
+
   return (
     <div>
       <RankModal visible = {rankVisible} setVisible={setRankVisible}></RankModal>
       <div className = 'operation'>
-          <Button className='button' shape = 'round' onClick={handleHireClick}>雇佣</Button>
-          <Button className='button' shape = 'round' danger>出征</Button>
-          <Button className='button' shape = 'round' link onClick={handleRankClicked}>排行榜</Button>
-          <></>
+            <div className='my-button'>
+              <span  className={spanClassName}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={handleHireClick}>
+                      雇&nbsp;佣
+              </span>
+            </div>
+            <div className='my-button'>
+              <span  className={spanClassName}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    >
+                      出&nbsp;征
+              </span>
+            </div>
+            <div className='my-button'>
+              <span  className={spanClassName}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                  onClick={handleRankClicked}
+                  >
+                      排&nbsp;行&nbsp;榜
+              </span>
+            </div>
+          
           <div className='button-opration'>
             <div style = {{padding:'10px'}} >
-              <Button className='default-font' onClick={handleDecMiner}>-</Button>
+            <div className='my-button multiline-text' >
+                
+                <span  className={spanClassName}>
+                       &nbsp;&nbsp;矿&nbsp;工&nbsp;&nbsp;<br></br>
+                </span>
+                <div>
+                  <span  className={spanClassName}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        onClick={handleDecMiner}>
+                          &nbsp;&nbsp;-&nbsp;&nbsp;
+                  </span>
+                  <span  className={spanClassName}>
+                          &nbsp;{ResourceStore.miner}&nbsp;
+                  </span>
+                  <span  className={spanClassName}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        onClick={handleAddMiner}>
+                          &nbsp;&nbsp;+&nbsp;&nbsp;
+                  </span>
+                </div>
+              </div>
+            
+              {/* <Button className='default-font' onClick={handleDecMiner}>-</Button>
               <Input value={'矿工：' + ResourceStore.miner}  style={inputWidth1} className='default-font' />
-              <Button className='default-font' onClick={handleAddMiner}>+</Button>
+              <Button className='default-font' onClick={handleAddMiner}>+</Button> */}
             </div>
-            <div style = {{padding:'10px'}}>
+            <div style = {{padding:'10px'}} >
+              <div className='my-button multiline-text' >
+                
+                <span  className={spanClassName}>
+                       &nbsp;&nbsp;商&nbsp;人&nbsp;&nbsp;<br></br>
+                </span>
+                <div>
+                  <span  className={spanClassName}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        onClick={handleDecMerchant}>
+                          &nbsp;&nbsp;-&nbsp;&nbsp;
+                  </span>
+                  <span  className={spanClassName}>
+                          &nbsp;{ResourceStore.merchant}&nbsp;
+                  </span>
+                  <span  className={spanClassName}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        onClick={handleAddMerchant}>
+                          &nbsp;&nbsp;+&nbsp;&nbsp;
+                  </span>
+                </div>
+              </div>
+            
+              {/* <Button className='default-font' onClick={handleDecMiner}>-</Button>
+              <Input value={'矿工：' + ResourceStore.miner}  style={inputWidth1} className='default-font' />
+              <Button className='default-font' onClick={handleAddMiner}>+</Button> */}
+            </div>
+            <div style = {{padding:'10px'}} >
+              <div className='my-button multiline-text' >
+                
+                <span  className={spanClassName}>
+                       &nbsp;&nbsp;战&nbsp;士&nbsp;&nbsp;<br></br>
+                </span>
+                <div>
+                  <span  className={spanClassName}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        onClick={handleDecSoldier}>
+                          &nbsp;&nbsp;-&nbsp;&nbsp;
+                  </span>
+                  <span  className={spanClassName}>
+                          &nbsp;{ResourceStore.soldier}&nbsp;
+                  </span>
+                  <span  className={spanClassName}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        onClick={handleAddSoldier}>
+                          &nbsp;&nbsp;+&nbsp;&nbsp;
+                  </span>
+                </div>
+              </div>
+            
+              {/* <Button className='default-font' onClick={handleDecMiner}>-</Button>
+              <Input value={'矿工：' + ResourceStore.miner}  style={inputWidth1} className='default-font' />
+              <Button className='default-font' onClick={handleAddMiner}>+</Button> */}
+            </div>
+            {/* <div style = {{padding:'10px'}}>
               <Button className='default-font' onClick={handleDecMerchant}>-</Button>
               <Input value={'商人：'+ResourceStore.merchant}  style={inputWidth2} className='default-font' />
               <Button className='default-font' onClick={handleAddMerchant}>+</Button>
-            </div>
-            <div style = {{padding:'10px'}}>
+            </div> */}
+            {/* <div style = {{padding:'10px'}}>
               <Button className='default-font' onClick={handleDecSoldier}>-</Button>
-              <Input value={'战士：'+ResourceStore.soldier}  style={inputWidth3} className='default-font' />
+              <Input value={'战士：'+ResourceStore.soldier}  style={inputWidth3}  className='default-font' />
               <Button className='default-font' onClick={handleAddSoldier}>+</Button>
-            </div>
+            </div> */}
           </div>
       </div>
     </div>
